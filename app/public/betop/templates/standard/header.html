@@ -1,0 +1,29 @@
+<?php
+include'template/header.php';
+include('template/navigation.php');
+?>
+<div class="clearfix" style="height:10px"></div>
+<div class="container">
+<div class="row">
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		<div class="sectionHeader">
+			<img id="aImg" class="img-responsive img-rounded" src="<?php echo Config::get('uri_parts/base');?>/images/betop.jpg">
+			<h1 id="aCaption"></h1>
+			<h3 class="hidden-xs" id="missionTitle"></h3>
+			<h4 class="hidden-xs" id="missionStatement"></h4>
+				<div class="credit">
+				<p id="aCredit"> QUANTATECHS</p>
+				</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<section class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+		<div class="hidden-xs">
+			<nav class="breadcrumb" style="margin-top: 20px;"><ul itemscope itemtype="http://schema.org/Breadcrumb" class="breadcrumb">
+			<li class="first"><a itemprop="url" href="index.php"><span itemprop="title">Home</span></a></li><li><a itemprop="url" href="<?php echo Config::get('uri_parts/base');?>/search.php"><span itemprop="title">Search</span></a></li>
+			</ul>
+			</nav>
+		</div>
+		<h1 class="pageTitle">Search Results</h1>
+		<div id="searchResultsContainer">

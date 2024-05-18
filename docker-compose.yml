@@ -1,0 +1,50 @@
+version: '3'
+services:
+  web:
+    container_name: qutan_server
+    build:
+      context: .
+      dockerfile: dockerfile
+    ports:
+      - 80:8080
+      - 443:8443
+    environment:
+      SSL_MODE: "mixed"
+#      SSL_PRIVATE_KEY_FILE: "/etc/ssl/private/betop.key"
+#      SSL_CERTIFICATE_FILE: "/etc/ssl/private/betop.crt"
+    volumes:
+      - ./app:/var/www/html
+      - ./certs/:/etc/ssl/private/
+    networks:
+      - qutan_net
+    depends_on:
+      - db
+  db:
+    image: mysql:8.3
+    container_name: qutan_database
+    volumes:
+      - ./database/mysql:/var/lib/mysql
+    environment:
+        MYSQL_ROOT_PASSWORD: "HenearkrxeRn0!#"
+        MYSQL_DATABASE: "qutan_net_one"
+        MYSQL_USER: "tkacy"
+        MYSQL_PASSWORD: "HenearkrxeRn0!#"
+    ports:
+      - "3306:3306"
+    networks:
+      - qutan_net
+  phpmyadmin:
+    container_name: qutan_phpmyadmin
+    image: phpmyadmin:5.2.1
+    restart: always
+    ports:
+      - "8181:80"
+    environment:
+      - PMA_HOST=db
+      - PMA_PORT=3306
+    networks:
+      - qutan_net
+    depends_on:
+      - db
+networks:
+  qutan_net:

@@ -11,5 +11,5 @@ WORKDIR /var/www/html
 COPY . /var/www/html
 
 # Copy virtual host configuration
-COPY ./vhost/000-default.conf /etc/apache2/sites-available/000-default.conf
+#COPY ./vhost/000-default.conf /etc/apache2/sites-available/000-default.conf
 

@@ -1,1 +1,0 @@
-# A Simple php rest authenticator 

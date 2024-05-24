@@ -1,7 +1,7 @@
 version: '3'
 services:
   web:
-    container_name: qutan_server
+    container_name: betun_server
     build:
       context: .
       dockerfile: dockerfile
@@ -10,31 +10,32 @@ services:
       - 443:8443
     environment:
       SSL_MODE: "full"
-#      SSL_PRIVATE_KEY_FILE: "/etc/ssl/private/betop.key"
-#      SSL_CERTIFICATE_FILE: "/etc/ssl/private/betop.crt"
+      SSL_PRIVATE_KEY_FILE: "/etc/ssl/private/betop.key"
+      SSL_CERTIFICATE_FILE: "/etc/ssl/private/betop.crt"
     volumes:
       - ./app:/var/www/html
       - ./certs/:/etc/ssl/private/
+#      - ./vhost/:/etc/apache2/sites-available/
     networks:
-      - qutan_net
+      - betun_net
     depends_on:
       - db
   db:
     image: mysql:8.3
-    container_name: qutan_database
+    container_name: betun_database
     volumes:
       - ./database/mysql:/var/lib/mysql
     environment:
         MYSQL_ROOT_PASSWORD: "HenearkrxeRn0!#"
-        MYSQL_DATABASE: "qutan_net_one"
+        MYSQL_DATABASE: "betun_net_one"
         MYSQL_USER: "tkacy"
         MYSQL_PASSWORD: "HenearkrxeRn0!#"
     ports:
       - "3306:3306"
     networks:
-      - qutan_net
+      - betun_net
   phpmyadmin:
-    container_name: qutan_phpmyadmin
+    container_name: betun_phpmyadmin
     image: phpmyadmin:5.2.1
     restart: always
     ports:
@@ -43,8 +44,8 @@ services:
       - PMA_HOST=db
       - PMA_PORT=3306
     networks:
-      - qutan_net
+      - betun_net
     depends_on:
       - db
 networks:
-  qutan_net:
+  betun_net:

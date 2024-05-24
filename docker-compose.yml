@@ -10,11 +10,12 @@ services:
       - 443:8443
     environment:
       SSL_MODE: "full"
-#      SSL_PRIVATE_KEY_FILE: "/etc/ssl/private/betop.key"
-#      SSL_CERTIFICATE_FILE: "/etc/ssl/private/betop.crt"
+      SSL_PRIVATE_KEY_FILE: "/etc/ssl/private/quantatechs.key"
+      SSL_CERTIFICATE_FILE: "/etc/ssl/private/quantatechs.crt"
     volumes:
       - ./app:/var/www/html
       - ./certs/:/etc/ssl/private/
+#      - ./httpd.conf:/usr/local/apache2/conf/httpd.conf
     networks:
       - qutan_net
     depends_on:

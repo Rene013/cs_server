@@ -35,9 +35,9 @@ $GLOBALS['config'] = array(
     ),
 	'uri_parts'=>array(
         'request'=>$_SERVER['REQUEST_URI'],
-        'base'=> rtrim(dirname($_SERVER['SCRIPT_NAME']), '\/'),
-        'all_parts'=> explode('/', iconv('ISO-8859-1', 'UTF-8', (substr(urldecode(explode('?', $_SERVER['REQUEST_URI'])[0]), strlen('base'))))),
-        'last'=>explode('/', iconv('ISO-8859-1', 'UTF-8', (substr(urldecode(explode('?', $_SERVER['REQUEST_URI'])[0]), strlen('base')))))[count(explode('/', iconv('ISO-8859-1', 'UTF-8', (substr(urldecode(explode('?', $_SERVER['REQUEST_URI'])[0]), strlen('base'))))))-1]
+        'base'=> 'https://betopcorporation.com',
+        'all_parts'=> explode('/', iconv('ISO-8859-1', 'UTF-8', (substr(urldecode(explode('?', $_SERVER['REQUEST_URI'])[0]), strlen(''))))),
+        'last'=>explode('/', iconv('ISO-8859-1', 'UTF-8', (substr(urldecode(explode('?', $_SERVER['REQUEST_URI'])[0]), strlen('')))))[count(explode('/', iconv('ISO-8859-1', 'UTF-8', (substr(urldecode(explode('?', $_SERVER['REQUEST_URI'])[0]), strlen(''))))))-1]
     ),
     'locate_file'=> array(
         'direct_file' =>$_SERVER['QUERY_STRING'],
@@ -63,3 +63,4 @@ $site_title = $webSettings->getSite_title();
 $user = new User();
 $data_user = $user->data();
 ?>
+

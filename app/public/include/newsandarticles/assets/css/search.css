@@ -1,0 +1,79 @@
+<style>
+	.autocomplete-suggestions { border: 1px solid #999; background: #FFF; overflow: auto; }
+	.autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
+	.autocomplete-selected { background: #F0F0F0; }
+	.autocomplete-suggestions strong { font-weight: normal; color: #3399FF; }
+	.autocomplete-group { padding: 2px 5px; }
+	.autocomplete-group strong { display: block; border-bottom: 1px solid #000; }
+	form.searchform {
+		margin-left: -14px;
+	    margin-top: 15px;
+	    margin-bottom: 15px;
+	}
+	#searchKeywords {
+		width: auto;
+	}
+	button.btn-search {
+		border-radius: 0 4px 4px 0;
+	}#searchKeywordsHeader{
+	        border-radius: 0;
+	        width:auto;
+	}
+	button.btn-header-search {
+		border-radius: 0 4px 4px 0;
+	}.searchLoader{
+	    display: none;
+	}
+	#loaderImage {
+	    position: absolute;
+	    top: 45%;
+	    left: 45%;
+	}
+	.categories a{
+	  cursor: pointer;
+	  display: inline-block;
+	  margin-bottom: 4px;
+	}
+	#searchResults a {
+	  text-decoration: none;
+	}
+	#searchResults a h3{
+		font-size: 18px;
+	  margin: 1px 0;
+	}
+	#searchResults a:hover h3{
+		text-decoration: underline;
+	}label.sortlabel{
+		margin: 6px 2px;
+	}
+	.searchResultsPagination .pagination .active a{
+		background-color: #0f6fc0;
+	}
+	.searchResultsPagination .pagination a:hover{
+		background-color: #0f6fc0;
+	}
+	div.search_aggregations{
+	    margin-top: 20px;
+	}
+	.search_aggregations .aggregate-list .list-group-item {
+		overflow: auto;
+	}
+	.search_aggregations .aggregate-list .list-group-item.active {
+		background: #0f6fc0;
+		border-color: #285e8e;
+	}
+	.search_aggregations .aggregate-list .list-group-item.active span.badge{
+		background: #fff;
+		color: #1d629c;
+	}
+	.search_aggregations .aggregate-list i.remove {
+		margin-left: 5px;
+	}
+	.search_aggregations .aggregate-list a {
+		text-decoration: none;
+		cursor: pointer;
+	}
+	.search_aggregations .aggregate-list a:hover {
+		text-decoration: underline;
+	}
+</style>

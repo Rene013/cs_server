@@ -12,7 +12,7 @@ class Page {
 			$this->_db = DB::getInstance();
 			
 			$this->_view = Config::get('uri_parts/last');
-			
+
 			if(!$page) {
 				
 				if(View::exists($this->_view)) {
@@ -74,6 +74,7 @@ class Page {
         if($page) {
             $field = (is_numeric($page)) ? 'id' : 'slug';
             $data = $this->_db->get('posts', array($field, '=', $page));
+
             if($data->count()) {
                 $this->_data = $data->first();
 				$this->_data->body_nohtml = strip_tags($this->_data->body);

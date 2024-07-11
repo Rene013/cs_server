@@ -87,7 +87,7 @@ if ($user->isLoggedIn()) {
 					</div>
 					<div class="panel-footer">
 						<div class="bottom text-center">
-							New here ? <a href="<?php echo Config::get('uri_parts/base');?>/register"><b>Join Us</b></a>
+							New here ? <a href="<?php echo Config::get('uri_parts/base');?>/new-user"><b>Join Us</b></a>
 						</div>
 					</div>
 				</div>

@@ -47,7 +47,7 @@
 							<a href="https://www.youtube.com/" target="_blank" class="fa fa-youtube fa-2x soc-med-but"></a>
 						</div>
 						<div class="top-links">
-							<a class="button" <?php if($user->isLoggedIn()){?> href = "<?php echo Config::get('uri_parts/base');?>/logout" > <span class="fa fa-sign-out top-link-but"></span> User logout <?php } else {?> href = "<?php echo Config::get('uri_parts/base');?>/login" ><span class="fa fa-sign-in top-link-but"></span> User login<?php }?></a>
+							<a class="button" <?php if($user->isLoggedIn()){?> href = "<?php echo Config::get('uri_parts/base');?>/logout" > <span class="fa fa-sign-out top-link-but"></span> User logout <?php } else {?> href = "<?php echo Config::get('uri_parts/base');?>/signin" ><span class="fa fa-sign-in top-link-but"></span> User Sign In<?php }?></a>
 							<a href="<?php echo Config::get('uri_parts/base');?>/careers"><span class="fa fa-briefcase top-link-but"></span> Careers</a>
 						</div>
 					</div><!--/Social buttons-->

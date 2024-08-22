@@ -161,10 +161,10 @@ function email($to, $pin, $name)
     try{
         $mail->SMTPDebug = false; // SMTP::DEBUG_SERVER;                      
             $mail->isSMTP();                                            
-            $mail->Host       = 'access.ncjfcj.org';                     
+            $mail->Host       = '*******************';                     
             $mail->SMTPAuth   = true;                                   
-            $mail->Username   = 'authentication@access.ncjfcj.org';         //SMTP username
-            $mail->Password   = 'Ncjfcj@DotOrg2023!';             //SMTP password
+            $mail->Username   = '**************************';         //SMTP username
+            $mail->Password   = '********************';             //SMTP password
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            
             $mail->Port       = 465;                                    
 

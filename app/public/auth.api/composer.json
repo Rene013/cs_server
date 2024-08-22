@@ -1,0 +1,20 @@
+{
+    "name": "simpleauth/simpleauth",
+    "type": "project",
+    "require": {
+        "phpmailer/phpmailer": "^6.8",
+        "ramsey/uuid": "^4.2"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "src\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "55953"
+        }
+    ],
+    "minimum-stability": "RC"
+}

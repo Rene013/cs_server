@@ -6,6 +6,20 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit2384fbaf3d9fcaf9a15e63ac2ec9ba00
 {
+    public static $prefixLengthsPsr4 = array (
+        'P' => 
+        array (
+            'PHPMailer\\PHPMailer\\' => 20,
+        ),
+    );
+
+    public static $prefixDirsPsr4 = array (
+        'PHPMailer\\PHPMailer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
+        ),
+    );
+
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Config' => __DIR__ . '/../..' . '/classes/Config.php',
@@ -16,6 +30,7 @@ class ComposerStaticInit2384fbaf3d9fcaf9a15e63ac2ec9ba00
         'Page' => __DIR__ . '/../..' . '/classes/page.php',
         'Postype' => __DIR__ . '/../..' . '/classes/Post_type.php',
         'Redirect' => __DIR__ . '/../..' . '/classes/Redirect.php',
+        'Router' => __DIR__ . '/../..' . '/classes/Router.php',
         'Session' => __DIR__ . '/../..' . '/classes/Session.php',
         'Token' => __DIR__ . '/../..' . '/classes/Token.php',
         'User' => __DIR__ . '/../..' . '/classes/User.php',
@@ -27,6 +42,8 @@ class ComposerStaticInit2384fbaf3d9fcaf9a15e63ac2ec9ba00
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+            $loader->prefixLengthsPsr4 = ComposerStaticInit2384fbaf3d9fcaf9a15e63ac2ec9ba00::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit2384fbaf3d9fcaf9a15e63ac2ec9ba00::$prefixDirsPsr4;
             $loader->classMap = ComposerStaticInit2384fbaf3d9fcaf9a15e63ac2ec9ba00::$classMap;
 
         }, null, ClassLoader::class);

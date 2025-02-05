@@ -15,6 +15,7 @@ return array(
     'Page' => $baseDir . '/classes/page.php',
     'Postype' => $baseDir . '/classes/Post_type.php',
     'Redirect' => $baseDir . '/classes/Redirect.php',
+    'Router' => $baseDir . '/classes/Router.php',
     'Session' => $baseDir . '/classes/Session.php',
     'Token' => $baseDir . '/classes/Token.php',
     'User' => $baseDir . '/classes/User.php',

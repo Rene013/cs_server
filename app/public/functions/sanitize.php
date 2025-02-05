@@ -1,4 +1,9 @@
 <?php
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
 function escape($string) {
 	$string = trim($string);
 	$string = stripslashes($string);
@@ -7,7 +12,8 @@ function escape($string) {
 }
 
 function email($to, $subject, $body){
-	mail($to, $subject, $body,'From: webmaster@betopcorporation.com');
+	//mail($to, $subject, $body,'From: webmaster@betopcorporation.com');
+	mailer($to, $subject, $body);
 }
 function output_errors($errors){
 	return '<ul><li>' . implode('</li><li>', $errors) . '</li></ul>';
@@ -55,4 +61,44 @@ function nav_main(){
 			</li>
 
 			<?php }
+}
+
+function mailer($to, $subject, $body)
+{
+    
+    $mail = new PHPMailer(true);
+
+    try{
+        $mail->SMTPDebug = false; // SMTP::DEBUG_SERVER;                      
+            $mail->isSMTP();                                            
+            $mail->Host       = '*******************';                     
+            $mail->SMTPAuth   = true;                                   
+            $mail->Username   = '**************************';         //SMTP username
+            $mail->Password   = '********************';             //SMTP password
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            
+            $mail->Port       = 587;                                    
+
+            //Recipients
+            $mail->setFrom('renmer03@betopcorporation.com', 'Betop Corporation Service');
+            $mail->addAddress($to, 'Customer');
+            //$mail->addAddress('');
+            //$mail->addReplyTo('info@ncjfcj.org', 'Information');
+            //$mail->addCC('');
+            //$mail->addBCC('');
+            //Attachments
+            //$mail->addAttachment('');         //Add attachments
+            //$mail->addAttachment('');    //Optional name
+            //Content
+            $mail->isHTML(true);                                  //Set email format to HTML
+            $mail->Subject = $subject;
+            $mail->Body    = $body;
+            $mail->AltBody = $body;
+
+            $mail->send();
+            //echo 'Message has been sent';
+            return true;
+        } catch (Exception $e) {
+            //echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+            return false;
+        }
 }
